@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # git clone
-git clone $GIT_REPO /var/www/html \
+git clone $GIT_REPO --branch ${GIT_BRANCH:-"master"} /var/www/html \
         && chown -R www-data:www-data /var/www/html
 
 # document root
