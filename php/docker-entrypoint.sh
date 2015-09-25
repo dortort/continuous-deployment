@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# working directory
+cd /
+
 # git clone
 rm -rf /var/www/html \
         && mkdir -p /var/www/html \
