@@ -13,6 +13,9 @@ RUN a2enmod rewrite
 # install git
 RUN apt-get update && apt-get install -y git --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
+# create app directory
+RUN mkdir -p /data/app
+
 COPY ./docker-entrypoint.sh /
 
 RUN chmod 700 /docker-entrypoint.sh
