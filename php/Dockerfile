@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y git --no-install-recommends && rm -rf /
 # create app directory
 RUN mkdir -p /data/app
 
+# modify apache config
+RUN sed -e "s|/var/www/|/data/|" -i /etc/apache2/apache2.conf
+
 COPY ./docker-entrypoint.sh /
 
 RUN chmod 700 /docker-entrypoint.sh
